@@ -36,14 +36,14 @@ function checkIfURLMentioned(tabId, changeInfo, tab) {
 
   if (q)
   {
-    $.getJSON('https://www.yammer.com/api/v1/search.json?search=' + q, function(data)
+    $.getJSON('https://www.yammer.com/api/v1/search.json?search="' + q + '"', function(data)
     {
       if (data['messages']['messages'].length > 0)
       {
         chrome.pageAction.setTitle({tabId: tabId, title: q + ' is mentioned'});
         chrome.pageAction.setIcon({tabId: tabId, path: 'yamcheck_19.png'});
 
-        action_url = 'https://www.yammer.com/#/Threads/Search?type=following&search=' + q;
+        action_url = 'https://www.yammer.com/#/Threads/Search?type=following&search="' + q + '"';
         chrome.pageAction.show(tabId);
       }
     });
