@@ -5,6 +5,7 @@ var domain_patterns = {
   'instagram.com': {pattern: /\/(p)\/([a-zA-Z0-9-_]+)/, index: 2},
   'storyful.com': {pattern: /\/(stories)\/([0-9-_]+)/, index: 2},
   'twitter.com': {pattern: /\/([a-zA-Z0-9-_]+)\/status\/([0-9-_]+)/, index: 2},
+  'vimeo.com': {pattern: /\/([0-9-_]+)/, index: 1},
 };
 
 var get_query = function(url)
@@ -31,8 +32,6 @@ var action_url = '';
 // Called when the url of a tab changes.
 function checkIfURLMentioned(tabId, changeInfo, tab) {
   var q = get_query(tab.url);
-
-  console.log(q);
 
   if (q)
   {

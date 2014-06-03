@@ -6,9 +6,9 @@
   },
   "background": { "scripts": ["jquery.js", "background.js"] },
   "name": "Storyful Yamcheck",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "manifest_version": 2,
-  "description": "Detects if a YouTube, Instagram or Facebook video or Tweet or Storyful story has been mentioned in Yammer.",
+  "description": "Detects if a YouTube, Instagram, Vimeo, or Facebook video or Tweet or Storyful story has been mentioned in Yammer.",
   "content_security_policy": "script-src 'self' https://www.yammer.com/; object-src 'self'",
   "permissions": [
         "https://www.yammer.com/",
