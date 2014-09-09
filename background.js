@@ -6,6 +6,7 @@ var domain_patterns = {
   'storyful.com': {pattern: /\/(stories)\/([0-9-_]+)/, index: 2},
   'twitter.com': {pattern: /\/([a-zA-Z0-9-_]+)\/status\/([0-9-_]+)/, index: 2},
   'vimeo.com': {pattern: /\/([0-9-_]+)/, index: 1},
+  'vk.com': {pattern: /\/video([0-9-_]+)/, index: 0}
 };
 
 var get_query = function(url)
@@ -32,7 +33,7 @@ var action_url = '';
 // Called when the url of a tab changes.
 function checkIfURLMentioned(tabId, changeInfo, tab) {
   var q = get_query(tab.url);
-
+  
   if (q)
   {
     $.getJSON('https://www.yammer.com/api/v1/search.json?search="' + q + '"', function(data)
